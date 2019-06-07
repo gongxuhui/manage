@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>公司员工管理系统</title>
+<title>公司管理系统</title>
 <!--引入js和css样式   这个要先引入css样式-->
 <link rel="stylesheet" type="text/css"
 	href="easyui/themes/default/easyui.css" />
@@ -20,20 +20,12 @@
 	<div id="north" region="north"
 		style="overflow: hidden; height: 100px; background: #D2E0F2 repeat-x center 50%;">
 		<div>
-			<center>
-				<h1>公司管理系统</h1>
-			</center>
+			<h1 style="text-align: center">荣天汇海管理系统</h1>
 		</div>
 		<div
 			style="width: 30px; height: 10px; float: right; padding-right: 10px; padding-bottom: 30px">
 			<a href="login.jsp"><h3>注销</h3></a>
 		</div>
-
-		<!-- <div
-			style="width: 50px; height: 10px; float: right; padding-right: 60px; padding-bottom: 30px">
-			<h3>用户:</h3>
-		</div>
- -->
 	</div>
 
 	</div>
@@ -50,7 +42,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/11.png') left no-repeat scroll;">
-								<a target="mainFrame" href="tree.jsp"><center>员工信息</center></a>
+								<a target="mainFrame" href="tree.jsp"><h4 style="text-align: center">员工信息</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -61,7 +53,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/12.png') left no-repeat scroll;">
-								<a target="mainFrame" href="levelsalary.jsp"><center>信息分析</center></a>
+								<a target="mainFrame" href="levelsalary.jsp"><h4 style="text-align: center">信息分析</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -72,7 +64,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/13.png') left no-repeat scroll;">
-								<a target="mainFrame" href="salary.jsp"><center>薪水分析</center></a>
+								<a target="mainFrame" href="salary.jsp"><h4 style="text-align: center">薪水分析</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -86,7 +78,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/21.png') left no-repeat scroll;">
-								<a target="mainFrame" href="echartpie.jsp"><center>产品信息</center></a>
+								<a target="mainFrame" href="echartpie.jsp"><h4 style="text-align: center">产品信息</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -97,7 +89,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/22.png') left no-repeat scroll;">
-								<a target="mainFrame" href="echartpie1.jsp"><center>销售信息</center></a>
+								<a target="mainFrame" href="echartpie1.jsp"><h4 style="text-align: center">销售信息</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -108,7 +100,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/23.png') left no-repeat scroll;">
-								<a target="mainFrame" href="echartbar.jsp"><center>盈利信息</center></a>
+								<a target="mainFrame" href="echartbar.jsp"><h4 style="text-align: center">盈利信息</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -121,7 +113,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/31.png') left no-repeat scroll;">
-								<a target="mainFrame" href="test.jsp"><center>关于</center></a>
+								<a target="mainFrame" href="test.jsp"><h4 style="text-align: center">关于</h4></a>
 							</div>
 						</li>
 					</ul>
@@ -133,24 +125,15 @@
 	<div region="center" id="mainPanle"
 		style="background: #eee; overflow: hidden;">
 		<div id="tabs" class="easyui-tabs" fit="true" border="false">
-			<div title="主页" style="padding: 20px;" id="home">
-				<center>
-					<!-- <div
-						style="font: italic; font-size: 35px; font-style: italic; color: #FFFF00">
-						<h1>Knight</h1>
-					</div>-->
-					
-					 <div
-						style="font: italic; font-size: 35px; font-style: italic; color: #7FFF00">
-						不负春光，野蛮生长
-					</div> 
-					<div>
-						<embed pluginspage="http://www.apple.com/quicktime/download/"
-							src="11.mp4" type="application/MPEG-4 Video File"
-							wmode="transparent" autostart="True" loop="True"
-							controller="True" style="height: 350px; width: 1000px;" />
+			<div title="主页" style="padding: 20px; text-align: center" id="home">
+					<div
+						style="font-size: 35px; font-style: italic; color: #4dbaff">
+						<h2>不负春光，野蛮生长</h2>
 					</div>
-				</center>
+
+					<div style="font-size: 35px; font-style: italic; color: #ff3948;margin-top: 100px">
+						<h2>欢迎使用荣天汇海管理系统</h2>
+					</div>
 			</div>
 		</div>
 	</div>
