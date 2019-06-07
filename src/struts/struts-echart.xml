@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--struts的action配置文件，将struts中的action交给spring容器托管 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<package name="echart" namespace="/" extends="struts-default">
+		<!--生成产品信息pie饼状图 -->
+		<action name="eChartAction_pie" class="com.hsmt.action.EChartAction"
+			method="getPieData">
+		</action>
+		<!--生成销售信息pie饼状图 -->
+		<action name="eChartAction_indentPie" class="com.hsmt.action.EChartAction"
+			method="getIndentPieData">
+		</action>
+
+		<!--生成地区销售信息pie饼状图 -->
+		<action name="eChartAction_areaPie" class="com.hsmt.action.EChartAction"
+			method="getAreaPieData">
+		</action>
+		<!--生成盈利信息条形图 -->
+		<action name="eChartAction_bar" class="com.hsmt.action.EChartAction"
+			method="getBarData">
+		</action>
+
+		<!--生成部门人数信息饼状图 -->
+		<action name="eChartAction_groupPie" class="com.hsmt.action.EChartAction"
+			method="getGroupData">
+		</action>
+
+		<!--生成员工薪水信息饼状图 -->
+		<action name="eChartAction_salaryPie" class="com.hsmt.action.EChartAction"
+			method="getSalaryData">
+		</action>
+		
+		<!--生成部门员工等级信息饼状图 -->
+		<action name="eChartAction_levelPie" class="com.hsmt.action.EChartAction"
+			method="getGroupLevelData">
+		</action>
+		
+
+
+	</package>
+</struts>

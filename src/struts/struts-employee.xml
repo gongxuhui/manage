@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--struts的action配置文件，将struts中的action交给spring容器托管 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="loginAction" class="com.hsmt.action.LoginAction"
+			method="login">
+			<result name="error">
+				/error.jsp
+			</result>
+			<result name="success">
+				/home.jsp
+			</result>
+		</action>
+		<!--员工信息左侧树的实现 -->
+		<action name="treeAction" class="com.hsmt.action.TreeAction"
+			method="getTree">
+		</action>
+		<!--产品信息左侧树的实现 -->
+		<action name="treeActionp" class="com.hsmt.action.TreeAction"
+			method="getProductTree">
+		</action>
+		<!--员工信息的查询 -->
+		<action name="employeeAction_searchAll" class="com.hsmt.action.EmployeeAction"
+			method="searchAll">
+		</action>
+		<!--员工信息的添加 -->
+		<action name="employeeAction_add" class="com.hsmt.action.EmployeeAction"
+			method="add">
+		</action>
+		<!--员工信息的编辑 -->
+		<action name="employeeAction_edit" class="com.hsmt.action.EmployeeAction"
+			method="edit">
+		</action>
+		<!--员工信息的删除 -->
+		<action name="employeeAction_del" class="com.hsmt.action.EmployeeAction"
+			method="del">
+		</action>
+		<!--制定员工名字查询 -->
+		<action name="employeeAction_search" class="com.hsmt.action.EmployeeAction"
+			method="search">
+		</action>
+		<!--回显用户编号 -->
+		<action name="employeeAction_getEmplId" class="com.hsmt.action.EmployeeAction"
+			method="getEmplId">
+		</action>
+		<!--excle -->
+		<action name="downLoadAction" class="com.hsmt.action.EmployeeAction"
+			method="getExcle">
+		</action>
+		<!--部门下拉框 -->
+		<action name="boxAction" class="com.hsmt.action.BoxAction"
+			method="getGroupBox">
+		</action>
+		<!--地区下拉框 -->
+		<action name="boxAction" class="com.hsmt.action.BoxAction"
+			method="getAreaBox">
+		</action>
+		<!--等级下拉框 -->
+		<action name="boxAction" class="com.hsmt.action.BoxAction"
+			method="getLevelBox">
+		</action>
+	</package>
+</struts>

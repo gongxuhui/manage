@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--产品信息的配置  -->
+	<bean id="freeChartAction" class="com.hsmt.action.FreeChartAction">
+		<property name="freeChartService" ref="freeChartService" />
+	</bean>
+	<bean id="freeChartService" class="com.hsmt.service.impl.FreeChartServiceImpl">
+		<property name="freeChartDao" ref="freeChartDao" />
+	</bean>
+	<bean id="freeChartDao" class="com.hsmt.dao.impl.FreeChartDaoImpl">
+	</bean>
+</beans>

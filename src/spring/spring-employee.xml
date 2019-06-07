@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--配置用户登录bean -->
+	<bean id="LoginAction" class="com.hsmt.action.LoginAction">
+		<property name="loginService" ref="loginService" />
+	</bean>
+	<bean id="loginService" class="com.hsmt.service.impl.LoginServiceImpl">
+		<property name="loginDao" ref="loginDao" />
+	</bean>
+	<bean id="loginDao" class="com.hsmt.dao.impl.LoginDaoImpl">
+	</bean>
+	<!-- 配置左侧树的bean -->
+	<bean id="treeAction" class="com.hsmt.action.TreeAction">
+		<property name="treeService" ref="treeService" />
+	</bean>
+	<bean id="treeService" class="com.hsmt.service.impl.TreeServiceImpl">
+		<property name="treeDao" ref="treeDao" />
+	</bean>
+	<bean id="treeDao" class="com.hsmt.dao.impl.TreeDaoImpl">
+	</bean>
+	<!--配置员工信息的bean -->
+	<bean id="employeeAction" class="com.hsmt.action.EmployeeAction">
+		<property name="employeeService" ref="employeeService" />
+	</bean>
+	<bean id="employeeService" class="com.hsmt.service.impl.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
+	<bean id="employeeDao" class="com.hsmt.dao.impl.EmployeeDaoImpl">
+	</bean>
+
+	<!--配置下拉菜单的bean -->
+	<bean id="boxAction" class="com.hsmt.action.BoxAction">
+		<property name="boxService" ref="boxService" />
+	</bean>
+	<bean id="boxService" class="com.hsmt.service.impl.BoxServiceImpl">
+		<property name="boxDao" ref="boxDao" />
+	</bean>
+	<bean id="boxDao" class="com.hsmt.dao.impl.BoxDaoImpl">
+	</bean>
+</beans>

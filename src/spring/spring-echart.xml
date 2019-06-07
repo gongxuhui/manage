@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--生成饼状图 配置 -->
+	<bean id="eChartAction" class="com.hsmt.action.EChartAction">
+		<property name="eChartService" ref="eChartService" />
+	</bean>
+	<bean id="eChartService" class="com.hsmt.service.impl.EChartServiceImpl">
+		<property name="eChartDao" ref="eChartDao" />
+	</bean>
+	<bean id="eChartDao" class="com.hsmt.dao.impl.EChartDaoImpl">
+	</bean>
+</beans>

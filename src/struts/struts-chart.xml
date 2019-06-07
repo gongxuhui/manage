@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--struts的action配置文件，将struts中的action交给spring容器托管 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<package name="fff" namespace="/"
+		extends="struts-default,jfreechart-default">
+		<result-types>
+			<result-type name="chart"
+				class="org.apache.struts2.dispatcher.ChartResult">
+
+				<param name="height">150</param>
+				<param name="width">200</param>
+			</result-type>
+		</result-types>
+		<action name="freeChartAction" class="com.hsmt.action.FreeChartAction"
+			method="getProductCahrt">
+			<result name="chart" type="chart">
+				<param name="height">300</param>
+				<param name="width">300</param>
+			</result>
+		</action>
+	</package>
+</struts>
