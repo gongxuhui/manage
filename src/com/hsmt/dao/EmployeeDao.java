@@ -18,7 +18,7 @@ public interface EmployeeDao {
 	public int editEmpl(Employee employee);
 
 	/* 删除员工信息的操作 */
-	public int delEmpl(int id);
+	public int delEmpl(String id);
 
 	/* 查询指定员工的操作 */
 	public List<Employee> find(String sid, String emp_hiredate, String emp_hiredate1);

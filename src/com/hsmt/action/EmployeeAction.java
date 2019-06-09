@@ -65,7 +65,6 @@ public class EmployeeAction implements ModelDriven<Employee> {
 
 	/* 删除员工信息 */
 	public void del() {
-		System.out.println("++++=" + did);
 		int i = 0;
 		try {
 			i = employeeService.delEmpl(did);
@@ -78,7 +77,7 @@ public class EmployeeAction implements ModelDriven<Employee> {
 		} else {
 			System.out.println("错误信息");
 		}
-		logger.info("action中添加员工信息时所需的did+" + did);
+		logger.info("action中删除员工信息时所需的did+" + did);
 	}
 
 	/* 指定信息查询员工信息 */

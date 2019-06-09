@@ -148,13 +148,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public int delEmpl(int id) {
+	public int delEmpl(String id) {
 		Connection conn = db.getConnection();
 		Statement stmt = null;
 		int result = 0;
 		try {
 			stmt = conn.createStatement();
-			String sql = "delete from employee where emp_id=" + id;
+			String sql = "delete from employee where emp_id= '" + id+"'";
 			result = stmt.executeUpdate(sql);
 		} catch (SQLException e) {
 			logger.error("dao删除员工数据时出现的异常-->", e);

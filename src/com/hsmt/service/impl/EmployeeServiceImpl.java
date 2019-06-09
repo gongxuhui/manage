@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public JSONObject getAllEmplById(int id, int page, int rows) {
-		Map<String, Object> jsonMap = new HashMap<String, Object>();// 定义map接受数据
+		Map<String, Object> jsonMap = new HashMap<String, Object>();
 		List<Employee> list;
 		try {
 			int total = employeeDao.getTotalById(id);
@@ -37,24 +37,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 			jsonMap.put("total", total);
 			jsonMap.put("rows", list);
 		} catch (Exception e) {
-			logger.error("service层中查询员工信息出现的异常：", e);
 		}
-		logger.info("service层jsonMap的长度+" + jsonMap.size());
 		return ju.getJsonByMap(jsonMap);
 	}
 
 	@Override
 	public int addEmpl(Employee employee) {
-		int num = Integer.parseInt(ru.getFixLenthString(6));// 生成6为随机数
-		String firstSpell = hy.cn2FirstSpell(employee.getEmpName());// 获得员工名字大写
+		int num = Integer.parseInt(ru.getFixLenthString(6));
+		String firstSpell = hy.cn2FirstSpell(employee.getEmpName());
 		String empId = firstSpell + num;
 		employee.setEmpId(empId);
-		logger.info("service层员工编号empId-->" + empId);
 		int result = 0;
 		try {
 			result = employeeDao.addEmpl(employee);
 		} catch (Exception e) {
-			logger.error("service层中addEmpl方法添加员工时出现异常", e);
 		}
 		return result;
 	}
@@ -65,22 +61,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 		try {
 			result = employeeDao.editEmpl(employee);
 		} catch (Exception e) {
-			logger.error("service层中修改员工信息时出现异常", e);
 		}
 		return result;
 	}
 
 	@Override
 	public int delEmpl(String did) {
-		String[] names = did.split(",");
 		int result = 0;
-		for (int i = 0; i < names.length; i++) {
-			int id = Integer.parseInt(names[i]);
-			try {
-				result = employeeDao.delEmpl(id);
-			} catch (Exception e) {
-				logger.error("service层中刪除員工時出現的異常-->", e);
-			}
+		try {
+			result = employeeDao.delEmpl(did);
+		} catch (Exception e) {
 		}
 		return result;
 	}
