@@ -113,7 +113,7 @@
 						<li>
 							<div
 								style="background: url('easyui/images/31.png') left no-repeat scroll;">
-								<a target="mainFrame" href="test.jsp"><h4 style="text-align: center">关于</h4></a>
+								<a target="mainFrame" href="about.jsp"><h4 style="text-align: center">关于</h4></a>
 							</div>
 						</li>
 					</ul>

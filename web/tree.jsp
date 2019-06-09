@@ -139,7 +139,7 @@
 				</table>
 			</form>
 		</div>
-		<div style="text-align: center; padding: 10px;"">
+		<div style="text-align: center; padding: 10px;">
 			<a href="javascript:void(0)" onclick="SearchOK()" id="btn-search"
 				icon="icon-ok">搜索</a><a href="javascript:void(0)"
 				onclick="closeSearchWindow()" id="btn-search-cancel"
