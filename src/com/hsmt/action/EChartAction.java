@@ -6,50 +6,43 @@ import com.hsmt.service.EChartService;
 
 public class EChartAction {
 	Logger logger = Logger.getLogger("EChartAction");
-	private int dataIndex;// Êı¾İË÷Òı
+	private int dataIndex;// æ•°æ®ç´¢å¼•
 	private EChartService eChartService;
-
-	/* »ñÈ¡±ı×´Í¼ ²¿ÃÅÈËÊıĞÅÏ¢µÄjsonÊı¾İ */
+	/* è·å–é¥¼çŠ¶å›¾ éƒ¨é—¨äººæ•°ä¿¡æ¯çš„jsonæ•°æ® */
 	public void getGroupData() {
 		eChartService.getGroupJson();
 	}
-
-	/* ¸ù¾İdataIndex»ñÈ¡±ı×´Í¼ ²¿ÃÅÖĞÔ±¹¤µÈ¼¶ */
+	/* æ ¹æ®dataIndexè·å–é¥¼çŠ¶å›¾ éƒ¨é—¨ä¸­å‘˜å·¥ç­‰çº§ */
 	public void getGroupLevelData() {
 		eChartService.getGroupLevelJson(dataIndex);
 		System.out.println(dataIndex);
-		logger.info("action²ãÖĞ»ñÈ¡±ı×´Í¼µÄÔ±¹¤µÈ¼¶ËùÓÃµÄdataIndex-->" + dataIndex);
+		logger.info("actionå±‚ä¸­è·å–é¥¼çŠ¶å›¾çš„å‘˜å·¥ç­‰çº§æ‰€ç”¨çš„dataIndex--->" + dataIndex);
 
 	};
 
-	/* »ñÈ¡±ı×´Í¼ Ô±¹¤Ğ½Ë®ĞÅÏ¢ */
+	/* è·å–é¥¼çŠ¶å›¾ å‘˜å·¥è–ªæ°´ä¿¡æ¯ */
 	public void getSalaryData() {
 		eChartService.getSalaryJson();
-		logger.info("action²ãÖĞ»ñÈ¡±ı×´Í¼µÄÔ±¹¤Ğ½Ë®ĞÅÏ¢Êı¾İ");
+		logger.info("actionå±‚ä¸­è·å–é¥¼çŠ¶å›¾çš„å‘˜å·¥è–ªæ°´ä¿¡æ¯æ•°æ®");
 	}
 
-	/* »ñÈ¡±ı×´Í¼ ²úÆ·ĞÅÏ¢µÄjsonÊı¾İ */
+	/* è·å–é¥¼çŠ¶å›¾ äº§å“ä¿¡æ¯çš„jsonæ•°æ® */
 	public void getPieData() {
 		eChartService.getPieData();
-		logger.info("action²ãÖĞ»ñÈ¡±ı×´Í¼µÄ²úÆ·ĞÅÏ¢Êı¾İ");
 	}
 
-	/* »ñÈ¡±ı×´Í¼ ×ÜÏúÊÛĞÅÏ¢µÄjsonÊı¾İ */
+	/* è·å–é¥¼çŠ¶å›¾ æ€»é”€å”®ä¿¡æ¯çš„jsonæ•°æ® */
 	public void getIndentPieData() {
 		eChartService.getIndentPieData();
-		logger.info("action²ãÖĞ»ñÈ¡±ı×´Í¼×ÜÏúÊÛĞÅÏ¢Êı¾İ");
 	}
-
-	/* »ñÈ¡±ı×´Í¼ µØÇøÏúÊÛĞÅÏ¢µÄjsonÊı¾İ */
+	/* è·å–é¥¼çŠ¶å›¾ åœ°åŒºé”€å”®ä¿¡æ¯çš„jsonæ•°æ® */
 	public void getAreaPieData() {
 		eChartService.getAreaPieData(dataIndex);
-		logger.info("action²ãÖĞ»ñÈ¡±ı×´Í¼µØÇøÏúÊÛĞÅÏ¢Êı¾İ");
 	}
 
-	/* »ñÈ¡ÌõĞÎÍ¼ Ó¯ÀûĞÅÏ¢µÄjsonÊı¾İ */
+	/* è·å–æ¡å½¢å›¾ ç›ˆåˆ©ä¿¡æ¯çš„jsonæ•°æ® */
 	public void getBarData() {
 		eChartService.geBarData();
-		logger.info("»ñÈ¡ÌõĞÎÍ¼ Ó¯ÀûĞÅÏ¢µÄjsonÊı¾İ");
 	}
 
 	public EChartService geteChartService() {

@@ -1,7 +1,7 @@
 package com.hsmt.util;
 
 public enum Area {
-	»ª¶«µØÇø(0, "»ª¶«µØÇø"), »ª±±µØÇø(1, "»ª±±µØÇø"), »ªÄÏµØÇø(2, "»ªÄÏµØÇø"), »ªÎ÷µØÇø(3, "»ªÎ÷µØÇø");
+	åä¸œåœ°åŒº(0, "åä¸œåœ°åŒº"), ååŒ—åœ°åŒº(1, "ååŒ—åœ°åŒº"), åå—åœ°åŒº(2, "åå—åœ°åŒº"), åè¥¿åœ°åŒº(3, "åè¥¿åœ°åŒº");
 	private int value;
 	private String name;
 
@@ -18,7 +18,7 @@ public enum Area {
 			}
 			
 		}
-		throw new IllegalArgumentException("statusÖµ·Ç·¨£¬Ã»ÓĞ·ûºÏµÄÃ¶¾Ù¶ÔÏó");
+		throw new IllegalArgumentException("statuså€¼éæ³•ï¼Œæ²¡æœ‰ç¬¦åˆçš„æšä¸¾å¯¹è±¡");
 	}
 
 	public int getValue() {

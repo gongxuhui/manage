@@ -17,7 +17,11 @@ import net.sf.json.JSONObject;
 public class JsonUtil {
 	Logger logger = Logger.getLogger("JsonUtil");
 
-	/* 把List数组转化成json */
+	/**
+	 * list杞琷son
+	 * @param list
+	 * @return
+	 */
 	public JSONArray getJsonByList(List<?> list) {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		JSONArray jsonArray = JSONArray.fromObject(list);
@@ -28,17 +32,20 @@ public class JsonUtil {
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			logger.error("json工具类中list转json时出现异常-->", e);
+			logger.error("list杞琷son--->", e);
 		}
 		return jsonArray;
 	}
 
-	/* 把已经封装好数据map集合转化为json */
+	/**
+	 * map杞琷son
+	 * @return
+	 */
 	public JSONObject getJson() {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("success", "保存成功");
-		map.put("msg", "操作错误");
+		map.put("success", "鎴愬姛");
+		map.put("msg", "澶辫触");
 		JSONObject jsonMap = JSONObject.fromObject(map);
 		response.setCharacterEncoding("utf-8");
 		try {
@@ -47,12 +54,16 @@ public class JsonUtil {
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			logger.error("json工具类中固定map转json时出现异常-->", e);
+			logger.error("--->", e);
 		}
 		return jsonMap;
 	}
 
-	/* 把map集合转化为json */
+	/**
+	 * map杞琷son
+	 * @param map
+	 * @return
+	 */
 	public JSONObject getJsonByMap(Map<String, Object> map) {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		JSONObject jsonMap = JSONObject.fromObject(map);
@@ -63,12 +74,16 @@ public class JsonUtil {
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			logger.error("json工具类中map转json时出现异常-->", e);
+			logger.error("map杞琷son--->", e);
 		}
 		return jsonMap;
 	}
 
-	/* 把map集合转化为json */
+	/**
+	 * map杞琷son
+	 * @param map
+	 * @return
+	 */
 	public JSONObject getJsonByMap1(Map<String, Object> map) {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		JSONObject jsonMap = JSONObject.fromObject(map);

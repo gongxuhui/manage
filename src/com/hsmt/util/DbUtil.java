@@ -18,10 +18,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DbUtil {
 	private static ComboPooledDataSource ds;
-	/* mysqlÊı¾İ¿âÇı¶¯¼ÓÔØ³ÌĞò */
+	//mysql c3p0ç¨‹åºé©±åŠ¨
 	static {
 		ds = new ComboPooledDataSource();
-		/* ¼ÓÔØÊôĞÔÎÄ¼ş£¬¶ÁÈ¡Êı¾İ¿âµÄÁ¬½ÓĞÅÏ¢ */
 		Properties pro = new Properties();
 		try {
 			pro.load(DbUtil.class.getResourceAsStream("/db.properties"));
@@ -38,7 +37,10 @@ public class DbUtil {
 		}
 	}
 
-	/* ´´½¨Êı¾İ¿âÁ¬½Ó£¬»ñµÃconnection¶ÔÏó */
+	/**
+	 * è·å–æ•°æ®åº“è¿æ¥
+	 * @return
+	 */
 	public Connection getConnection() {
 		try {
 			return (Connection) ds.getConnection();
@@ -48,7 +50,6 @@ public class DbUtil {
 		return null;
 	}
 
-	/* ´´½¨Ò»¸ö´´½¨Ò»¸öStatement¶ÔÏó£¬ÒªÖ´ĞĞSQLÓï¾ä£¬±ØĞë»ñµÃjava.sql.StatementÊµÀı */
 	public int runSQL(String sql) {
 		Connection conn = getConnection();
 		int a = 0;
@@ -64,7 +65,6 @@ public class DbUtil {
 		return a;
 	}
 
-	/* µÃµ½Êı¾İµÄµÚÒ»ÁĞÔªËØ¿ÉÒÔ¸ù¾İË÷Òı Ò²¿ÉÒÔ¸ù¾İÁĞÃû */
 	public int count(String sql) {
 		Connection conn = getConnection();
 		Statement stmt = null;
@@ -83,7 +83,7 @@ public class DbUtil {
 		return 0;
 	}
 
-	/* ²éÑ¯Ò»ÌõÊı¾İ ·µ»ØResultSet */
+
 	public ResultSet find(String sql) {
 		Connection conn = getConnection();
 		Statement stmt = null;
@@ -99,7 +99,7 @@ public class DbUtil {
 		return rs;
 	}
 
-	/* ¸ù¾İ½ÚµãÅĞ¶ÏÊÇ·ñÓĞ×Ó½Úµã */
+
 	public int getChild(int id) {
 		Connection conn = getConnection();
 		TMenu tMenu = null;
@@ -133,7 +133,6 @@ public class DbUtil {
 		return len;
 	}
 
-	/* ´ÓÊı¾İ¿â»ñÈ¡ĞÅÏ¢È»ºó×ª»¯³É¶ÔÓ¦Í¼±íµÄÊı¾İ */
 	public DefaultPieDataset dataConversion(String sql) {
 		Connection conn = getConnection();
 		Statement stmt = null;
@@ -145,24 +144,23 @@ public class DbUtil {
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			// È¡µÃĞĞÊı
 			if (rs.last()) {
 				result = rs.getRow();
-				rs.beforeFirst(); // Ö¸Õë»Ø¹ö
+				rs.beforeFirst();
 			}
-			table = new double[result][rs.getMetaData().getColumnCount() - 1];// ¶¨Òå´æ·ÅÊı¾İµÄ¶şÎ¬Êı×é
+			table = new double[result][rs.getMetaData().getColumnCount() - 1];
 			name = new String[result];
-			number = new String[rs.getMetaData().getColumnCount() - 1]; // ¶¨Òå´æ·ÅÊı¾İ±íÍ·µÄÒ»Î¬Êı×é
+			number = new String[rs.getMetaData().getColumnCount() - 1];
 			rs.next();
 			for (int j = 0; j < rs.getMetaData().getColumnCount() - 1; j++) {
-				number[j] = rs.getMetaData().getColumnName(j + 2); // È¡³ö±íÍ·²¢´æ·ÅÊı×é
+				number[j] = rs.getMetaData().getColumnName(j + 2);
 			}
 			int i = 0;
 			rs.beforeFirst();
 			while (rs.next()) {
 				name[i] = rs.getString(1);
 				for (int j = 0; j < rs.getMetaData().getColumnCount() - 1; j++)
-					table[i][j] = rs.getDouble(j + 2); // È¡³öÊı¾İ²¢´æÈë¶şÎ¬Êı×é
+					table[i][j] = rs.getDouble(j + 2);
 				i++;
 			}
 		} catch (Exception ex) {
@@ -170,12 +168,10 @@ public class DbUtil {
 		} finally {
 			close(rs, stmt, conn);
 		}
-		// ´´½¨DefaultPieDatasetÀàĞÍµÄÊı¾İ¼¯£¬²¢ĞĞÊı¾İ¼¯ÖĞÌí¼ÓÊı¾İ£¨´ÓÊı¾İ¿âÖĞÈ¡µÄÊı¾İ£©
 		DefaultPieDataset dataset = new DefaultPieDataset();
 		for (int i = 0; i < number.length; i++)
 			for (int j = 0; j < result; j++) {
 				dataset.setValue(name[j], table[j][i]);
-				// µ÷ÊÔÓÃ
 				System.out.println(table[j][i]);
 				System.out.println(name[j]);
 				System.out.println(dataset);
@@ -183,7 +179,6 @@ public class DbUtil {
 		return dataset;
 	}
 
-	/* ¶¯Ì¬»ñÈ¡Êı¾İ¿âµÄÁĞÃû */
 	public List<String> getCellName(String sql) {
 		Connection conn = getConnection();
 		Statement stmt = null;
@@ -195,9 +190,7 @@ public class DbUtil {
 			ResultSetMetaData data = rs.getMetaData();
 			if (rs.next()) {
 				for (int i = 1; i <= data.getColumnCount(); i++) {
-					/* »ñµÃËùÓĞÁĞµÄÊıÄ¿¼°Êµ¼ÊÁĞÊı */
 					int columnCount = data.getColumnCount();
-					/* »ñµÃÖ¸¶¨ÁĞµÄÁĞÃû */
 					String columnName = data.getColumnName(i);
 					listCell.add(columnName);
 					System.out.println(columnCount);
@@ -214,7 +207,12 @@ public class DbUtil {
 		return listCell;
 	}
 
-	/* ¹Ø±ÕÊı¾İ¿âÁ¬½Ó²Ù×÷ */
+	/**
+	 * å…³é—­ç¨‹åº
+	 * @param rs
+	 * @param stmt
+	 * @param conn
+	 */
 	public void close(ResultSet rs, Statement stmt, Connection conn) {
 		try {
 			if (null != rs)

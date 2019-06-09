@@ -64,9 +64,9 @@ public class EChartDaoImpl implements EChartDao {
 			}
 			System.out.println(employeeList.size());
 			System.out.println(employeeList.get(1).getEmpLevel());
-			logger.info("dao层中查询员工薪水信息的sql-->" + sql);
+			logger.info("dao鑾峰彇钖按鏁版嵁鐨剆ql-->" + sql);
 		} catch (SQLException e) {
-			logger.error("dao层中查询员工薪水信息时出现异常-->", e);
+			logger.error("dao鑾峰彇钖按鏁版嵁鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(rs, stmt, conn);
 		}

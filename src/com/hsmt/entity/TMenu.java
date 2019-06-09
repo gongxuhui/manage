@@ -1,6 +1,5 @@
 package com.hsmt.entity;
 
-//这是是数据库的映射类
 public class TMenu {
 	private int id;
 	private int pid;

@@ -1,6 +1,5 @@
 package com.hsmt.entity;
 
-/*利润到数据库的映射表*/
 public class Profit {
 	private String months;
 	private int profit;

@@ -23,9 +23,7 @@ public class Ip implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		/* 获取工作ip */
 		String ip = request.getRemoteAddr();
-		/* 获取工作用户名 */
 		String userName = (String) ((HttpServletRequest) request).getSession().getAttribute("userName");
 		MDC.put("ip", ip);
 		MDC.put("userName", userName);

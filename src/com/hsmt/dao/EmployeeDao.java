@@ -5,24 +5,24 @@ import java.util.List;
 import com.hsmt.entity.Employee;
 
 public interface EmployeeDao {
-	/* ²éÑ¯ÓÃ»§×ÜÊıµÄ²Ù×÷ */
+	/* æŸ¥è¯¢ç”¨æˆ·æ€»æ•°çš„æ“ä½œ */
 	public int getTotalById(int id);
 
-	/* ²éÑ¯Ô±¹¤ĞÅÏ¢²Ù×÷ */
+	/* æŸ¥è¯¢å‘˜å·¥ä¿¡æ¯æ“ä½œ */
 	public List<Employee> findAllById(int id, int page, int rows);
 
-	/* Ìí¼ÓÔ±¹¤ĞÅÏ¢µÄ²Ù×÷ */
+	/* æ·»åŠ å‘˜å·¥ä¿¡æ¯çš„æ“ä½œ */
 	public int addEmpl(Employee employee);
 
-	/* ĞŞ¸ÄÔ±¹¤ĞÅÏ¢µÄ²Ù×÷ */
+	/* ä¿®æ”¹å‘˜å·¥ä¿¡æ¯çš„æ“ä½œ */
 	public int editEmpl(Employee employee);
 
-	/* É¾³ıÔ±¹¤ĞÅÏ¢µÄ²Ù×÷ */
+	/* åˆ é™¤å‘˜å·¥ä¿¡æ¯çš„æ“ä½œ */
 	public int delEmpl(int id);
 
-	/* ²éÑ¯Ö¸¶¨Ô±¹¤µÄ²Ù×÷ */
+	/* æŸ¥è¯¢æŒ‡å®šå‘˜å·¥çš„æ“ä½œ */
 	public List<Employee> find(String sid, String emp_hiredate, String emp_hiredate1);
 
-	/* »ñÈ¡excleÖĞµÄÊı¾İ */
+	/* è·å–excleä¸­çš„æ•°æ® */
 	public List<List<String>> listDate();
 }

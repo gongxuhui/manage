@@ -25,7 +25,6 @@ public class TreeDaoImpl implements TreeDao {
 	List<TMenu> listTMenu = null;
 	List<PMenu> listPMenu = null;
 
-	/* 通过父节点返回子节点信息 */
 	public List<PMenu> getRootById(int id) {
 		conn = db.getConnection();
 		listTMenu = new ArrayList<TMenu>();
@@ -47,7 +46,6 @@ public class TreeDaoImpl implements TreeDao {
 				tMenu.setState(rs.getString("state"));
 				listTMenu.add(tMenu);
 			}
-			// 数据封装 为了前台字段一致
 			for (TMenu tt : listTMenu) {
 				pMenu = new PMenu();
 				pMenu.setId(tt.getId());
@@ -56,15 +54,14 @@ public class TreeDaoImpl implements TreeDao {
 				listPMenu.add(pMenu);
 			}
 		} catch (SQLException e) {
-			logger.error("daoImpl层中查询子节点数据出现的异常-->", e);
+			logger.error("daoImpl锟斤拷锟叫诧拷询锟接节碉拷锟斤拷锟捷筹拷锟街碉拷锟届常-->", e);
 		} finally {
 			db.close(rs, stmt, conn);
 		}
-		logger.info("daoImpl层中查询子节点数据listPMenu-->" + listPMenu);
+		logger.info("daoImpl锟斤拷锟叫诧拷询锟接节碉拷锟斤拷锟斤拷listPMenu-->" + listPMenu);
 		return listPMenu;
 	}
 
-	/* 通过节点返回子节点信息 */
 	@Override
 	public List<PMenu> getProductRootById(int id) {
 		conn = db.getConnection();

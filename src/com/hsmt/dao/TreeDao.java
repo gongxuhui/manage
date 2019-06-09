@@ -5,8 +5,8 @@ import java.util.List;
 import com.hsmt.entity.PMenu;
 
 public interface TreeDao {
-	/*Ô±¹¤ĞÅÏ¢×ó²àÊ÷µÄÊµÏÖ*/
+	/*å‘˜å·¥å·¦ä¾§æ ‘*/
 	public List<PMenu> getRootById(int id);
-	/*²úÆ·ĞÅÏ¢×ó²àÊ÷µÄÊµÏÖ*/
+	/*äº§å“ä¿¡æ¯å·¦ä¾§æ ‘*/
 	public List<PMenu>getProductRootById(int id);
 }

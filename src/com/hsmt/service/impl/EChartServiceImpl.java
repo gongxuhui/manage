@@ -26,13 +26,13 @@ public class EChartServiceImpl implements EChartService {
 	public JSONObject getGroupJson() {
 		List<Employee> dataList = null;
 		dataList = eChartDao.getGroupData();
-		/* °Ñ²¿ÃÅÃû³ÆÐÅÏ¢·â×°µ½Êý×éÖÐ */
+		/* ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getEmpGroup();
 		}
 
-		/* °Ñ²¿ÃÅÈËÊýÇé¿öÐÅÏ¢ÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½Ñ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> groupData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -54,13 +54,13 @@ public class EChartServiceImpl implements EChartService {
 		List<Employee> dataList = null;
 		dataList = eChartDao.getSalaryData();
 		System.out.println("adfafas" + dataList.size());
-		/* °ÑÔ±¹¤µÈ¼¶ÐÅÏ¢·â×°µ½Êý×éÖÐ */
+		/* ï¿½ï¿½Ô±ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getEmpLevel();
 		}
 
-		/* °ÑÔ±¹¤ÐÅÏ¢ÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> salaryData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -80,13 +80,13 @@ public class EChartServiceImpl implements EChartService {
 	public JSONObject getGroupLevelJson(int dataIndex) {
 		String group = Group.getInstance(dataIndex);
 		List<Employee> dataList = eChartDao.getGroupLevelData(group);
-		/* °ÑµÈ¼¶Ãû³Æ·â×°µ½Êý×éÖÐ */
+		/* ï¿½ÑµÈ¼ï¿½ï¿½ï¿½ï¿½Æ·ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getEmpLevel();
 		}
 		System.out.println(legend);
-		/* °ÑµÈ¼¶ÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½ÑµÈ¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> amountData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -108,14 +108,14 @@ public class EChartServiceImpl implements EChartService {
 		try {
 			dataList = eChartDao.getProductData();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯Êý¾ÝÒì³£" + e);
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ì³£" + e);
 		}
-		/* °Ñ²úÆ·Ãû×Ö·â×°µ½Êý×éÖÐ */
+		/* ï¿½Ñ²ï¿½Æ·ï¿½ï¿½ï¿½Ö·ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getProduct_name();
 		}
-		/* °Ñ¿â´æÁ¿ÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> stockData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -125,7 +125,7 @@ public class EChartServiceImpl implements EChartService {
 		}
 		JSONArray series = JSONArray.fromObject(stockData);
 
-		/* °Ñ³É²ú²úÆ·×ÜÊýÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½Ñ³É²ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> sumData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -146,14 +146,14 @@ public class EChartServiceImpl implements EChartService {
 	@Override
 	public JSONObject getIndentPieData() {
 		List<Indent> dataList = eChartDao.getIndentData();
-		/* °Ñ¶©µ¥µØÖ··â×°µ½Êý×éÖÐ */
+		/* ï¿½Ñ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getOrder_adress();
 		}
 		System.out.println(legend);
 
-		/* °Ñ¶©µ¥ÐÅÏ¢·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½Ñ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> amountData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -173,13 +173,13 @@ public class EChartServiceImpl implements EChartService {
 		String area = Area.getInstance(dataIndex);
 		System.out.println(area);
 		List<Product> dataList = eChartDao.getAreaData(area);
-		/* °Ñ²úÆ·Ãû×Ö·â×°µ½Êý×éÖÐ */
+		/* ï¿½Ñ²ï¿½Æ·ï¿½ï¿½ï¿½Ö·ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		String legend[] = new String[dataList.size()];
 		for (int i = 0; i <= dataList.size() - 1; i++) {
 			legend[i] = dataList.get(i).getProduct_name();
 		}
 		System.out.println(legend);
-		/* °Ñ¸÷µØÇøÏúÊÛ·â×°µ½¼¯ºÏÖÐ×ª³Éjson */
+		/* ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û·ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½json */
 		List<EChartPie> amountData = new ArrayList<EChartPie>();
 		for (int j = 0; j <= dataList.size() - 1; j++) {
 			EChartPie pie = new EChartPie();
@@ -206,18 +206,18 @@ public class EChartServiceImpl implements EChartService {
 			legend[i] = legendList.get(i);
 		}
 		List<String> xAxisList = new ArrayList<String>();
-		xAxisList.add("1ÔÂ");
-		xAxisList.add("2ÔÂ");
-		xAxisList.add("3ÔÂ");
-		xAxisList.add("4ÔÂ");
-		xAxisList.add("5ÔÂ");
-		xAxisList.add("6ÔÂ");
-		xAxisList.add("7ÔÂ");
-		xAxisList.add("8ÔÂ");
-		xAxisList.add("9ÔÂ");
-		xAxisList.add("10ÔÂ");
-		xAxisList.add("11ÔÂ");
-		xAxisList.add("12ÔÂ");
+		xAxisList.add("1ï¿½ï¿½");
+		xAxisList.add("2ï¿½ï¿½");
+		xAxisList.add("3ï¿½ï¿½");
+		xAxisList.add("4ï¿½ï¿½");
+		xAxisList.add("5ï¿½ï¿½");
+		xAxisList.add("6ï¿½ï¿½");
+		xAxisList.add("7ï¿½ï¿½");
+		xAxisList.add("8ï¿½ï¿½");
+		xAxisList.add("9ï¿½ï¿½");
+		xAxisList.add("10ï¿½ï¿½");
+		xAxisList.add("11ï¿½ï¿½");
+		xAxisList.add("12ï¿½ï¿½");
 		String xAxis[] = new String[xAxisList.size()];
 		for (int i = 0; i <= xAxisList.size() - 1; i++) {
 			xAxis[i] = xAxisList.get(i);

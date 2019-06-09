@@ -3,22 +3,22 @@ package com.hsmt.service;
 import net.sf.json.JSONObject;
 
 public interface EChartService {
-	/* 部门员工人数信息转化为json */
+	/* 閮ㄩ棬鍛樺伐浜烘暟淇℃伅杞寲涓簀son */
 	public JSONObject getGroupJson();
 
-	/* 员工薪水信息转化为json */
+	/* 鍛樺伐钖按淇℃伅杞寲涓簀son */
 	public JSONObject getSalaryJson();
-	/*根据dataIndex查询组内等级*/
+	/*鏍规嵁dataIndex鏌ヨ缁勫唴绛夌骇*/
 	public JSONObject getGroupLevelJson(int dataIndex);
-	/* 产品信息数据转化成json数据 */
+	/* 浜у搧淇℃伅鏁版嵁杞寲鎴恓son鏁版嵁 */
 	public JSONObject getPieData();
 
-	/* 总产品销售信息转化成json数据 */
+	/* 鎬讳骇鍝侀攢鍞俊鎭浆鍖栨垚json鏁版嵁 */
 	public JSONObject getIndentPieData();
 
-	/* 地区产品销售信息转化成json数据 */
+	/* 鍦板尯浜у搧閿�鍞俊鎭浆鍖栨垚json鏁版嵁 */
 	public JSONObject getAreaPieData(int dataIndex);
 
-	/* 每月盈利信息转化成json数据 */
+	/* 姣忔湀鐩堝埄淇℃伅杞寲鎴恓son鏁版嵁 */
 	public JSONObject geBarData();
 }

@@ -1,6 +1,5 @@
 package com.hsmt.entity;
 
-/*数据库产品表的映射类*/
 public class Product {
 	private int product_id;
 	private String product_name;

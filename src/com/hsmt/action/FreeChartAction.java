@@ -11,10 +11,10 @@ public class FreeChartAction {
 	private FreeChartService freeChartService;
 	private JFreeChart chart;
 
-	/* »ñµÃ²úÆ·ĞÅÏ¢µÄÍ¼±í */
+	/* è·å–äº§å“å›¾ç‰‡æ•°æ®*/
 	public String getProductCahrt() {
 		chart = freeChartService.getProductFreeChart();
-		logger.info("action²ãÖĞ»ñÈ¡²úÆ·ĞÅÏ¢µÄÍ¼±í");
+		logger.info("actionä¸­äº§å“å›¾ç‰‡æ•°æ®");
 		return "chart";
 	}
 

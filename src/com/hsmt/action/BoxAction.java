@@ -10,22 +10,22 @@ public class BoxAction {
 	private String text;
 	private BoxService boxService;
 
-	/* »ñÈ¡²¿ÃÅÏÂÀ­²Ëµ¥ */
+	/* è·å–éƒ¨é—¨ä¸‹æ‹‰èœå• */
 	public void getGroupBox() {
 		boxService.getGroupBox();
-		logger.info("action²ãÖĞÖ´ĞĞÁËÏÂÀ­²Ëµ¥·½·¨");
+		logger.info("actionå±‚ä¸­æ‰§è¡Œäº†ä¸‹æ‹‰èœå•æ–¹æ³•");
 	}
 
-	/* »ñÈ¡²¿ÃÅÏÂÀ­²Ëµ¥ */
+	/* è·å–éƒ¨é—¨ä¸‹æ‹‰èœå• */
 	public void getAreaBox() {
 		boxService.getAeraBox();
-		logger.info("action²ãÖĞÖ´ĞĞÁËÏÂÀ­²Ëµ¥·½·¨");
+		logger.info("actionå±‚ä¸­æ‰§è¡Œäº†ä¸‹æ‹‰èœå•æ–¹æ³•");
 	}
 
-	/* »ñÈ¡²¿ÃÅÏÂÀ­²Ëµ¥ */
+	/* è·å–éƒ¨é—¨ä¸‹æ‹‰èœå• */
 	public void getLevelBox() {
 		boxService.getLevelBox();
-		logger.info("action²ãÖĞÖ´ĞĞÁËÏÂÀ­²Ëµ¥·½·¨");
+		logger.info("actionå±‚ä¸­æ‰§è¡Œäº†ä¸‹æ‹‰èœå•æ–¹æ³•");
 	}
 
 	public int getId() {

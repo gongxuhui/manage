@@ -5,12 +5,12 @@ import java.util.List;
 import com.hsmt.entity.Box;
 
 public interface BoxDao {
-	/* 获取部门的下拉框数据 */
+	/* 鑾峰彇閮ㄩ棬鐨勪笅鎷夋鏁版嵁 */
 	public List<Box> findGroupBox();
 
-	/* 获取地区的下拉框数据 */
+	/* 鑾峰彇閮ㄩ棬鐨勪笅鎷夋鏁版嵁 */
 	public List<Box> findAreaBox();
 
-	/* 获取等级的下拉框数据 */
+	/* 鑾峰彇绛夌骇鐨勪笅鎷夋鏁版嵁 */
 	public List<Box> findLevelBox();
 }

@@ -3,12 +3,12 @@ package com.hsmt.service;
 import net.sf.json.JSONArray;
 
 public interface BoxService {
-	/* ²¿ÃÅÏÂÀ­¿ò */
+	/* éƒ¨é—¨ä¸‹æ‹‰æ¡† */
 	public JSONArray getGroupBox();
 
-	/* µØÇøÏÂÀ­¿ò */
+	/* åœ°åŒºä¸‹æ‹‰æ¡† */
 	public JSONArray getAeraBox();
 
-	/* µÈ¼¶ÏÂÀ­¿ò */
+	/* ç­‰çº§ä¸‹æ‹‰æ¡† */
 	public JSONArray getLevelBox();
 }

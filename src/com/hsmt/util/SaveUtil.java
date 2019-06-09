@@ -12,50 +12,40 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class SaveUtil {
-	/* Éú³Éexcle */
+
 	public void exportExcle(String url, String excleName, List<?> listData) {
-		isExclePath(url);//ÅĞÎÄ¼ş¼ĞÊÇ²»ÊÇ´æÔÚ
-		/* ´´½¨Ò»¸öexcle */
+		isExclePath(url);
 		HSSFWorkbook workbook = new HSSFWorkbook();
-		/* ´´½¨Ò»¸ö¹¤×÷±í ¿ÉÒÔ´´½¨¶à¸ö */
-		HSSFSheet sheet = workbook.createSheet("¹®Ğñ»Ô");
-		/*
-		 * ¶¯Ì¬´´½¨µÚÒ»ĞĞµÄÁĞĞÅÏ¢ for (int i = 0; i <= listCell.size() - 1; i++) { HSSFCell
-		 * cell = row.createCell((short) i); cell.setCellValue(listCell.get(i));
-		 * }
-		 */
-		/* ¾²Ì¬´´½¨µÚÒ»ĞĞÁĞĞÅÏ¢ */
+		HSSFSheet sheet = workbook.createSheet("gognxuhui");
 		HSSFRow row1 = sheet.createRow(0);
 		@SuppressWarnings("deprecation")
 		HSSFCell cell0 = row1.createCell((short) 0);
-		cell0.setCellValue("Ô±¹¤±àºÅ");
+		cell0.setCellValue("å‘˜å·¥ç¼–å·");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell1 = row1.createCell((short) 1);
-		cell1.setCellValue("Ô±¹¤Ãû×Ö");
+		cell1.setCellValue("å‘˜å·¥åå­—");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell2 = row1.createCell((short) 2);
-		cell2.setCellValue("Ô±¹¤ÄêÁä");
+		cell2.setCellValue("å‘˜å·¥å¹´é¾„");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell3 = row1.createCell((short) 3);
-		cell3.setCellValue("Ô±¹¤ĞÔ±ğ");
+		cell3.setCellValue("å‘˜å·¥æ€§åˆ«");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell4 = row1.createCell((short) 4);
-		cell4.setCellValue("ÈëÖ°Ê±¼ä");
+		cell4.setCellValue("å…¥èŒæ—¶é—´");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell5 = row1.createCell((short) 5);
-		cell5.setCellValue("Ñ§Àú");
+		cell5.setCellValue("å­¦å†");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell6 = row1.createCell((short) 6);
-		cell6.setCellValue("µÈ¼¶");
+		cell6.setCellValue("ç­‰çº§");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell7 = row1.createCell((short) 7);
-		cell7.setCellValue("Ğ½Ë®");
+		cell7.setCellValue("è–ªæ°´");
 		@SuppressWarnings("deprecation")
 		HSSFCell cell8 = row1.createCell((short) 8);
-		cell8.setCellValue("²¿ÃÅ");
-		/* ´´½¨ÁĞ */
+		cell8.setCellValue("éƒ¨é—¨");
 		for (int i = 1; i <= listData.size() - 1; i++) {
-			/* ÔÚÒ»¸ö¹¤×÷±íÖĞ´´½¨Ò»ĞĞ */
 			HSSFRow row = sheet.createRow(i);
 			@SuppressWarnings("unchecked")
 			List<String> list = (List<String>) listData.get(i);
@@ -65,7 +55,6 @@ public class SaveUtil {
 				cell.setCellValue(list.get(j));
 			}
 		}
-		/* ±£´æÎÄ¼ş */
 		try
 
 		{
@@ -84,7 +73,6 @@ public class SaveUtil {
 
 	}
 
-	/* ÅĞ¶ÏÊı¾İÎÄ¼ş¼ĞÊÇ²»ÊÇ´æÔÚ */
 	public void isExclePath(String exclePath) {
 		File file = new File(exclePath);
 		if (!file.exists()) {
@@ -92,7 +80,10 @@ public class SaveUtil {
 		}
 	}
 
-	/* ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ²»ÊÇ´æÔÚ */
+	/**
+	 * åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯ä¸æ˜¯å­˜åœ¨,å¦‚ä¸å­˜åœ¨åˆ™åˆ›å»º
+	 * @param chartPath
+	 */
 	public void isChartPathExist(String chartPath) {
 		File file = new File(chartPath);
 		if (!file.exists()) {

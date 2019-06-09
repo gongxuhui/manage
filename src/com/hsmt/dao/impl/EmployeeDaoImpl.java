@@ -29,19 +29,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			String sql = "SELECT e.`emp_id`,e.`emp_name`,e.`emp_age`,e.`emp_sex`,e.`emp_hiredate`,e.`emp_area`,e.`emp_level`,e.`emp_salary`,e.`emp_group`";
 			if ((id == 1) || (id == 0)) {
 				sql = sql + " FROM employee e;";
-				logger.info("service层中查询公司下员工总数的sql-->" + sql);
 			} else {
 				if (db.getChild(id) > 0) {
 					sql = sql + " FROM employee e , t_menu t  WHERE t.`text` = e.`emp_group` AND t.`pid`=" + id;
-					logger.info("service层中查询部门下员工总数的sql-->" + sql);
 				} else {
 					sql = sql + " FROM employee e , t_menu t  WHERE t.`text` = e.`emp_group` AND t.`id`=" + id;
-					logger.info("service层中查询分组下员工总数的sql-->" + sql);
+
 				}
 			}
+			logger.info("EmployeeDaoImpl鑾峰彇鏁版嵁鎬绘暟鏃剁殑sql-->" + sql);
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				/* 注意对象实例化 */
 				employee = new Employee();
 				employee.setEmpId(rs.getString("emp_id"));
 				employee.setEmpName(rs.getString("emp_name"));
@@ -55,7 +53,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				employeeList.add(employee);
 			}
 		} catch (SQLException e) {
-			logger.error("dao层查询员工总数信息时出现异常-->", e);
+			logger.error("EmployeeDaoImpl鑾峰彇鏁版嵁鎬绘暟鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(rs, stmt, conn);
 		}
@@ -75,21 +73,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			String sql = "SELECT e.`emp_id`,e.`emp_name`,e.`emp_age`,e.`emp_sex`,e.`emp_hiredate`,e.`emp_area`,e.`emp_level`,e.`emp_salary`,e.`emp_group`";
 			if ((id == 1) || (id == 0)) {
 				sql = sql + " FROM employee e  LIMIT " + index + "," + rows;
-				logger.info("service层中查询公司下员工的sql-->" + sql);
 			} else {
 				if (db.getChild(id) > 0) {
 					sql = sql + " FROM employee e , t_menu t  WHERE t.`text` = e.`emp_group` AND t.`pid`=" + id
 							+ " LIMIT " + index + "," + rows;
-					logger.info("service层中查询部门下员工的sql-->" + sql);
 				} else {
 					sql = sql + " FROM employee e , t_menu t  WHERE t.`text` = e.`emp_group` AND t.`id`=" + id
 							+ " LIMIT " + index + "," + rows;
-					logger.info("service层中查询分组下员工的sql-->" + sql);
 				}
 			}
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				/* 注意对象实例化 */
 				employee = new Employee();
 				employee.setEmpId(rs.getString("emp_id"));
 				employee.setEmpName(rs.getString("emp_name"));
@@ -103,11 +97,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				employeeList.add(employee);
 			}
 		} catch (SQLException e) {
-			logger.error("dao层查询员工信息时出现异常-->", e);
+			logger.error("dao鏁版嵁鍒嗛〉鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(rs, stmt, conn);
 		}
-		logger.info("dao层list的长度+" + employeeList.size());
 		return employeeList;
 	}
 
@@ -123,9 +116,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 					+ employee.getEmpSex() + "','" + employee.getEmpHiredate() + "','" + employee.getEmpArea() + "','"
 					+ employee.getEmpLevel() + "'," + employee.getEmpSalary() + ",'" + employee.getEmpGroup() + "')";
 			result = stmt.executeUpdate(sql);
-			logger.info("EmployeeDaoImpl层中addEmpl方法添加员工的sql-->" + sql);
+			logger.info("EmployeeDaoImpl娣诲姞鍛樺伐鏁版嵁鏃剁殑sql-->" + sql);
 		} catch (SQLException e) {
-			logger.error("dao层添加员工信息时出现异常-->", e);
+			logger.error("EmployeeDaoImpl娣诲姞鍛樺伐鏁版嵁鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(null, stmt, conn);
 		}
@@ -145,9 +138,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 					+ employee.getEmpArea() + "',e.`emp_salary`=" + employee.getEmpSalary() + ",e.`emp_group`= '"
 					+ employee.getEmpGroup() + "'  WHERE  e.`emp_id`='" + employee.getEmpId() + "'";
 			result = stmt.executeUpdate(sql);
-			logger.info("dao层修改员工信息时的sql-->" + sql);
+			logger.info("dao缂栬緫鍛樺伐鏁版嵁鏃剁殑sql-->" + sql);
 		} catch (SQLException e) {
-			logger.error("dao层修改员工信息时出现异常-->", e);
+			logger.error("dao缂栬緫鍛樺伐鏁版嵁鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(null, stmt, conn);
 		}
@@ -163,9 +156,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			stmt = conn.createStatement();
 			String sql = "delete from employee where emp_id=" + id;
 			result = stmt.executeUpdate(sql);
-			logger.info("service层中删除员工信息时的sql-->" + sql);
 		} catch (SQLException e) {
-			logger.error("service层中删除员工信息时出现的异常-->", e);
+			logger.error("dao鍒犻櫎鍛樺伐鏁版嵁鏃跺嚭鐜扮殑寮傚父-->", e);
 		} finally {
 			db.close(null, stmt, conn);
 		}

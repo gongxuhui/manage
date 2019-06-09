@@ -10,10 +10,10 @@ public class LoginAction {
 	private String userName;
 	private String passWord;
 
-	// 登录入口
+
 	public String login() {
 		String result = loginService.loginByNamePwd(userName, passWord);
-		logger.info("action层中程序的登录入口");
+		logger.info("action鐢ㄦ埛鐧诲綍");
 		return result;
 	}
 

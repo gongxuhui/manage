@@ -2,15 +2,14 @@ package com.hsmt.util;
 
 import java.util.Random;
 
+/**
+ * è·å–éšæœºæ•°
+ */
 public class RandomUtil {
-	/* »ñµÃËæ»úÊıµÄ·½·¨ */
 	public String getFixLenthString(int strLength) {
 		Random rm = new Random();
-		/* »ñµÃËæ»úÊı */
 		double pross = (1 + rm.nextDouble()) * Math.pow(10, strLength);
-		/* ½«»ñµÃµÄ»ñµÃËæ»úÊı×ª»¯Îª×Ö·û´® */
 		String fixLenthString = String.valueOf(pross);
-		/* ·µ»Ø¹Ì¶¨µÄ³¤¶ÈµÄËæ»úÊı */
 		return fixLenthString.substring(1, strLength + 1);
 	}
 }

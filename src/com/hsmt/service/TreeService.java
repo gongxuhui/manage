@@ -3,10 +3,9 @@ package com.hsmt.service;
 import net.sf.json.JSONArray;
 
 public interface TreeService {
-	/* ÊµÏÖÔ±¹¤ĞÅÏ¢µÄ×ó²àÊ÷ */
+	/* å‘˜å·¥å·¦ä¾§æ ‘ */
 	public JSONArray getRoot(int id);
-
-	/* ÊµÏÖ²úÆ·ĞÅÏ¢µÄ×ó²àÊ÷ */
+	/* äº§å“å·¦ä¾§æ ‘ */
 	public JSONArray getProductRoot(int id);
 
 }

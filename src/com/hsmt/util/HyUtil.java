@@ -7,7 +7,12 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 public class HyUtil {
-	/* »ñµÃÃû×ÖÊ××ÖÄ¸´óĞ´ */
+
+	/**
+	 * è·å¾—åå­—é¦–å­—æ¯å¤§å†™
+	 * @param chinese
+	 * @return
+	 */
 	public String cn2FirstSpell(String chinese) {
 		StringBuffer pybf = new StringBuffer();
 		char[] arr = chinese.toCharArray();
@@ -31,7 +36,11 @@ public class HyUtil {
 		return pybf.toString().replaceAll("\\W", "").trim().toUpperCase();
 	}
 
-	/* »ñµÃºº×ÖµÄÓ¢ÎÄÈ«Æ´ */
+	/**
+	 * è·å¾—æ±‰å­—çš„è‹±æ–‡å…¨æ‹¼
+	 * @param chinese
+	 * @return
+	 */
 	public String cn2Spell(String chinese) {
 		StringBuffer pybf = new StringBuffer();
 		char[] arr = chinese.toCharArray();

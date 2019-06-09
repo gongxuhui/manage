@@ -3,6 +3,6 @@ package com.hsmt.dao;
 import org.jfree.data.general.DefaultPieDataset;
 
 public interface FreeChartDao {
-	/*从数据库中获取图表中的数据*/
+	/*浠庢暟鎹簱鑾峰彇鏁版嵁*/
 	public DefaultPieDataset getFreeChartData();
 }

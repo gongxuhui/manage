@@ -6,13 +6,13 @@ import freemarker.log.Logger;
 
 public class TreeAction {
 	Logger logger = Logger.getLogger("LoginAction");
-	private int id;// ×ó²àÊ÷½Úµã
+	private int id;// å·¦ä¾§æ ‘ id
 	private TreeService treeService;
 
-	/* Ô±¹¤×ó²àÊ÷µÄÊµÏÖ */
+	/* å‘˜å·¥å·¦ä¾§æ ‘çš„å®ç° */
 	public void getTree() {
 		treeService.getRoot(id);
-		logger.info("action²ãÖĞÊµÏÖÔ±¹¤×ó²àÊ÷  ½Úµãid-->" + id);
+		logger.info("actionå±‚ä¸­å®ç°å‘˜å·¥å·¦ä¾§æ ‘  èŠ‚ç‚¹id-->" + id);
 	}
 
 	public int getId() {

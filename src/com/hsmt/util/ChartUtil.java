@@ -14,33 +14,33 @@ import org.jfree.chart.title.TextTitle;
 import org.jfree.data.general.DefaultPieDataset;
 
 public class ChartUtil {
-	/* Éú³É±ı×´Í¼ */
+	/* ç”Ÿæˆé¥¼çŠ¶å›¾ */
 	public JFreeChart makePieChart(String title, DefaultPieDataset dataset) {
-		/* ½â¾öÂÒÂëÎÊÌâºÍÉèÖÃÏÔÊ¾ÎÄ×ÖµÄ¸ñÊ½ */
+		// è§£å†³ä¹±ç é—®é¢˜å’Œè®¾ç½®æ˜¾ç¤ºæ–‡å­—çš„æ ¼å¼
 		StandardChartTheme mChartTheme = new StandardChartTheme("CN");
-		mChartTheme.setLargeFont(new Font("ºÚÌå", Font.BOLD, 20));
-		mChartTheme.setExtraLargeFont(new Font("ËÎÌå", Font.PLAIN, 15));
-		mChartTheme.setRegularFont(new Font("ËÎÌå", Font.PLAIN, 15));
+		mChartTheme.setLargeFont(new Font("é»‘ä½“", Font.BOLD, 20));
+		mChartTheme.setExtraLargeFont(new Font("å®‹ä½“", Font.PLAIN, 15));
+		mChartTheme.setRegularFont(new Font("å®‹ä½“", Font.PLAIN, 15));
 		ChartFactory.setChartTheme(mChartTheme);
-		/* ´´½¨Æ´×´Í¼µÄ·½·¨ */
+		// åˆ›å»ºæ‹¼çŠ¶å›¾
 		JFreeChart pieChart = ChartFactory.createPieChart(title, dataset, true, true, true);
-		/* È¡µÃ±ıÍ¼µÄPlot¶ÔÏó */
+		// å–å¾—é¥¼å›¾çš„Plotå¯¹è±¡
 		PiePlot plot = (PiePlot) pieChart.getPlot();
-		/* ÓÃÀ´ÏÔÊ¾±ê×¢µÄ×¢½â£¬{0}:{1}ÓÃÀ´ÉèÖÃÏÔÊ¾µÄ¸ñÊ½ */
+		// ç”¨æ¥æ˜¾ç¤ºæ ‡æ³¨çš„æ³¨è§£ï¼Œ{0}:{1}ç”¨æ¥è®¾ç½®æ˜¾ç¤ºçš„æ ¼å¼
 		plot.setLabelGenerator(new StandardPieSectionLabelGenerator("{0}{1}({2})"));
-		/* ÉèÖÃ±³¾°ÑÕÉ« */
+		// è®¾ç½®èƒŒæ™¯é¢œè‰²
 		plot.setBackgroundPaint(Color.lightGray);
-		/* ÉèÖÃ±ß¿òÑÕÉ« */
+		// è®¾ç½®è¾¹æ¡†é¢œè‰²
 		plot.setBaseSectionOutlinePaint(Color.green);
-		/* ÉèÖÃ±ß¿ò´ÖÏ¸ */
+		// è®¾ç½®è¾¹æ¡†ç²—ç»†
 		plot.setBaseSectionOutlineStroke(new BasicStroke(0));
 
-		/* ÉèÖÃ±êÌâ */
+		// è®¾ç½®æ ‡é¢˜
 		TextTitle texttitle = pieChart.getTitle();
-		texttitle.setFont(new Font("ËÎÌå", Font.BOLD, 30));
-		/* ÉèÖÃÍ¼Àı */
+		texttitle.setFont(new Font("å®‹ä½“", Font.BOLD, 30));
+		// è®¾ç½®å›¾ä¾‹
 		LegendTitle legendtitle = pieChart.getLegend();
-		legendtitle.setItemFont(new Font("ËÎÌå", Font.BOLD, 18));
+		legendtitle.setItemFont(new Font("å®‹ä½“", Font.BOLD, 18));
 		return pieChart;
 	}
 }

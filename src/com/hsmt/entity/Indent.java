@@ -1,7 +1,7 @@
 package com.hsmt.entity;
 
 public class Indent {
-	/* 数据库订单表的映射类 */
+
 	private int order_id;
 	private int product_id;
 	private int order_amount;

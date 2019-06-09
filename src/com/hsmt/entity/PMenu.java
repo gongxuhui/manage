@@ -1,6 +1,5 @@
 package com.hsmt.entity;
 
-//这个是页面到后台的映射类
 public class PMenu {
 	private int id;
 	private String text;

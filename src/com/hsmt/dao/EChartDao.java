@@ -8,30 +8,30 @@ import com.hsmt.entity.Product;
 import com.hsmt.entity.Profit;
 
 public interface EChartDao {
-	/* »ñÈ¡²¿ÃÅÔ±¹¤Êı¾İ */
+	/* è·å–éƒ¨é—¨å‘˜å·¥æ•°æ® */
 	public List<Employee> getGroupData();
 
-	/* »ñÈ¡Ô±¹¤Ğ½Ë®Êı¾İ */
+	/* è·å–å‘˜å·¥è–ªæ°´æ•°æ® */
 	public List<Employee> getSalaryData();
 
-	/* »ñÈ¡Ô±¹¤Ğ½Ë®Êı¾İ */
+	/* è·å–å‘˜å·¥è–ªæ°´æ•°æ® */
 	public List<Employee> getGroupLevelData(String group);
 
-	/* »ñÈ¡²úÆ·Êı¾İ */
+	/* è·å–äº§å“æ•°æ® */
 	public List<Product> getProductData();
 
-	/* »ñÈ¡×ÜÏúÊÛÊı¾İ */
+	/* è·å–æ€»é”€å”®æ•°æ® */
 	public List<Indent> getIndentData();
 
-	/* »ñÈ¡µØÇøÏúÊÛÊı¾İ */
+	/* è·å–åœ°åŒºé”€å”®æ•°æ® */
 	public List<Product> getAreaData(String area);
 
-	/* »ñÈ¡13ÄêÓ¯ÀûÊı¾İ */
+	/* è·å–åœ°åŒºé”€å”®æ•°æ® */
 	public List<Profit> getProfitData13();
 
-	/* »ñÈ¡14ÄêÓ¯ÀûÊı¾İ */
+	/* è·å–14å¹´ç›ˆåˆ©æ•°æ® */
 	public List<Profit> getProfitData14();
 
-	/* »ñÈ¡15ÄêÓ¯ÀûÊı¾İ */
+	/* è·å–15å¹´ç›ˆåˆ©æ•°æ® */
 	public List<Profit> getProfitData15();
 }

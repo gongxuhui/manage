@@ -3,6 +3,6 @@ package com.hsmt.service;
 import org.jfree.chart.JFreeChart;
 
 public interface FreeChartService {
-	/*Éú³É²úÆ·µÄÍ¼±í*/
+	/*ç”Ÿæˆäº§å“çš„å›¾è¡¨*/
 	public JFreeChart getProductFreeChart();
 }
